@@ -1241,6 +1241,7 @@ JSPropertySpec TypedArray::jsprops[] = {
  */
 
 #define IMPL_TYPED_ARRAY_STATICS(_typedArray)                                  \
+template<> JSObjectOps _typedArray::fastObjectOps;                              \
 template<> JSObjectMap _typedArray::fastObjectMap(&_typedArray::fastObjectOps, \
                                                   JSObjectMap::SHAPELESS);     \
 template<> JSObjectOps _typedArray::fastObjectOps = {                          \

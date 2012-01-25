@@ -1802,7 +1802,7 @@ template <typename Visitor>
 static JS_REQUIRES_STACK JS_ALWAYS_INLINE void
 VisitGlobalSlots(Visitor &visitor, JSContext *cx, TreeFragment *f)
 {
-    JSObject* globalObj = f->globalObj();
+    JSObject* globalObj = f->globalObj;
     SlotList& gslots = *f->globalSlots;
     VisitGlobalSlots(visitor, cx, globalObj, gslots.length(), gslots.data());
 }
